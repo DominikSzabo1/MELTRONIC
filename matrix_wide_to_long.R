@@ -1,5 +1,3 @@
-#.libPaths( c( .libPaths(), "/home/dszabo/R/x86_64-redhat-linux-gnu-library/3.6/") )
-#suppressMessages(require(R.utils))
 suppressMessages(require(data.table))
 suppressMessages(require(stringr))
 suppressMessages(require(argparser))
