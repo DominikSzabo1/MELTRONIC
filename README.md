@@ -1,6 +1,6 @@
 # MELTRONIC 
 
-_a statistical framework to detect chromatin melting and condensat from GAM data_
+_a statistical framework to detect chromatin melting and condensation from GAM data_
 
 <img src="./data/MELTRONIC_schematic.png" width="900">
 
@@ -13,9 +13,9 @@ library(stringr)q
 ```
 
 ### Available command line applications:
-- command_line_apps/matrix_wide_to_long.R: 
+- matrix_wide_to_long.R: 
     Converts a square matrix into a long matrix for IS calculation. Accepts wildcards for processing of multiple chromosomes.
-  - command_line_apps/long_matrix_to_IS.R:
+- long_matrix_to_IS.R:
     Calculates insulation scores at multiple distances (default 100kb - 1Mb, steps of 100kb).
 - MELTRONIC.R:   
    Compares insulation score (IS) distributions over regions of interest. Was applied to 120 kb sliding windows accross the entire genome and and long genes for the preparation of the manuscript.    
