@@ -1,0 +1,48 @@
+sets=['DN_cocaine_1d_wt', 'DN_cocaine_14dR1_wt', 'DN_cocaine_14dR2_wt']
+reference_dataset_wt = ['DN_saline_wt']
+chromIDS = ['1', '2', '3','4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', 'X']
+
+#psuedorule that collects target files
+rule pseudo_long:
+	input:
+		expand("../../three_d_data/40kb/{set}/mat_long/mat_long_chr{chromID}_reshaped.txt.gz", set=sets, chromID=chromIDS)+
+		expand("../../three_d_data/40kb/{dataset}/IS_scores.tsv.gz", dataset=datasets)+
+		expand("../../three_d_data/40kb/melting_scores/{dataset}_vs_{reference_dataset}_scores_n574.tsv", dataset=datasets, reference_dataset=reference_datasets)
+
+rule reshape:
+        input:
+                "../../three_d_data/40kb/{sets}/mat_wide/mat_wide_chr{chromIDS}.txt.gz"
+        output:
+                "../../three_d_data/40kb/{sets}/mat_long/mat_long_chr{chromIDS}_reshaped.txt.gz"
+        threads:
+                48
+        shell:
+                "Rscript ./matrix_wide_to_long.R -c {threads} -i {input} -o {output}"
+
+rule IS_calc:
+	input:
+		expand("../../three_d_data/40kb/{{dataset}}/mat_long/mat_long_chr{chromID}.txt.gz", chromID=chromIDS, dataset=datasets)
+
+	output:
+		"../../three_d_data/40kb/{dataset}/IS_scores.tsv.gz" 
+
+	threads:
+		48
+
+	shell:
+		"Rscript ./long_matrix_to_IS.R -c {threads} -i {input} -o {output} -r 40000 --ISmin 240000 --ISmax 1040000 --ISsteps 10"
+
+rule melt_calc:
+        input:
+                inp="../../three_d_data/40kb/{dataset}/IS_scores.tsv.gz",
+		reference="../../three_d_data/40kb/{reference_dataset}/IS_scores.tsv.gz",
+		intervals="./mm10_GRCm38.102_360kb_genes.bed"
+
+        output:
+                "../../three_d_data/40kb/melting_scores/{dataset}_vs_{reference_dataset}_scores_n574.tsv"
+
+        threads:
+                48
+
+        shell:
+                "Rscript ./MELTRONIC.R -c {threads} -r {input.reference} -i {input.inp} -g {input.intervals} -o {output} --resolution 40000"
