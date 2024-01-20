@@ -13,9 +13,9 @@ library(stringr)
 ```
 
 ### Available command line applications:
-- matrix_wide_to_long.R: 
+- matrix_wide_to_long.R:   
     Converts a square matrix into a long matrix for IS calculation. Accepts wildcards for processing of multiple chromosomes.
-- long_matrix_to_IS.R:
+- long_matrix_to_IS.R:   
     Calculates insulation scores at multiple distances (default 100kb - 1Mb, steps of 100kb).
 - MELTRONIC.R:   
    Compares insulation score (IS) distributions over regions of interest. Was applied to 120 kb sliding windows accross the entire genome and and long genes for the preparation of the manuscript.    
