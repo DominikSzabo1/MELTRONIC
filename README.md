@@ -9,7 +9,7 @@ _a statistical framework to detect chromatin melting and condensation from GAM d
 library(data.table)
 library(dplyr)
 library(argparser)
-library(stringr)q
+library(stringr)
 ```
 
 ### Available command line applications:
