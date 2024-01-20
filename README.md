@@ -32,7 +32,7 @@ for explanations
 - Snakefile_wide_to_MELTRONIC:   
    Example Snakefile for calculation of melting scores in 120 kb sliding windows across the entire mouse genome (autosomes + chrX):. Includes reshaping of square NPMI matrices to long NPMI matrices, ultra-fast calculation of insulation scores using 10 square sizes, and calculation of melting scores.
 
-  Please refer to the (Snakemake website)[https://snakemake.readthedocs.io/en/stable/] for installation and basic usage explanations.
+  Please refer to the [Snakemake website](https://snakemake.readthedocs.io/en/stable/) for installation and basic usage explanations.
   Please adjustify file paths etc before executing the snakefiles. 
    
 Developed and tested with R version 3.6.0 Planting of a Tree.  
