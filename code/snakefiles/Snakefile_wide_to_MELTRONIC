@@ -9,7 +9,7 @@ rule pseudo_long:
 	input:
 		expand("../../three_d_data/40kb/{set}/mat_long/mat_long_chr{chromID}_reshaped.txt.gz", set=sets, chromID=chromIDS)+
 		expand("../../three_d_data/40kb/{set}/IS_scores.tsv.gz", set=sets)+
-		expand("../../three_d_data/40kb/melting_scores/{reference_dataset_wt}_vs_{set}_genomewide_120kbbins.tsv.gz", set=sets, reference_dataset_wt=reference_dataset_wt)
+		expand("../../three_d_data/40kb/melting_scores/{set}_vs_{reference_dataset_wt}_genomewide_120kbbins.tsv.gz", set=sets, reference_dataset_wt=reference_dataset_wt)
 
 rule reshape:
 	input:

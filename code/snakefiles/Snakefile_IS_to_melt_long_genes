@@ -7,7 +7,7 @@ chromIDS = ['1', '2', '3','4', '5', '6', '7', '8', '9', '10', '11', '12', '13', 
 #psuedorule that collects target files
 rule pseudo_long:
 	input:
-		expand("../../data/melting_scores/{reference_dataset_wt}_vs_{set}_long_genes_n574.tsv.gz", set=sets, reference_dataset_wt=reference_dataset_wt)
+		expand("../../data/melting_scores/{set}_vs_{reference_dataset_wt}_long_genes_n574.tsv", set=sets, reference_dataset_wt=reference_dataset_wt)
 
 rule melt_calc_wt:
 	input:
@@ -16,7 +16,7 @@ rule melt_calc_wt:
 		intervals="../../data/mm10_GRCm38.102_360kb_genes.bed"
 
 	output:
-		"../../data/melting_scores/{reference_dataset_wt}_vs_{sets}_long_genes_n574.tsv.gz"
+		"../../data/melting_scores/{reference_dataset_wt}_vs_{sets}_long_genes_n574.tsv"
 
 	threads:
 		48
