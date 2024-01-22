@@ -1,6 +1,6 @@
 # MELTRONIC 
 
-_a statistical framework to detect chromatin melting and condensation from GAM data_
+_a statistical framework to detect chromatin melting and condensation genome wide from GAM data_
 
 <img src="./data/MELTRONIC_schematic.png" width="900">
 
