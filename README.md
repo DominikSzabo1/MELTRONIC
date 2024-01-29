@@ -2,7 +2,7 @@
 
 _a statistical framework to detect chromatin melting and condensation genome wide from GAM data_
 
-[![DOI:10.5281/zenodo.10528545](https://zenodo.org/badge/DOI/10.5281/zenodo.10528545.svg)]([https://www.nature.com/articles/s41586-021-04081-2](https://doi.org/10.5281/zenodo.10528545))
+[![DOI:10.5281/zenodo.10528545](https://zenodo.org/badge/DOI/10.5281/zenodo.10528545.svg)]([[https://www.nature.com/articles/s41586-021-04081-2](https://doi.org/10.5281/zenodo.10528545)](https://doi.org/10.5281/zenodo.10528545))
 
 
 <img src="./data/MELTRONIC_schematic.png" width="900">
