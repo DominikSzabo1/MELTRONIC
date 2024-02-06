@@ -21,7 +21,7 @@ scores_allcomp <- left_join(read_in, score_files_tbl) %>%
   dplyr::select(chrom, start, end, ID, perc_na_or_missing_ref, perc_na_or_missing_inp, comp_short, score) %>% 
   dplyr::rename(gene_id = ID, start_bin=start, end_bin=end)
 
-
+#USE a melting /condensing threshold of 10 and -10 for the long genes
 scores_allcomp_wide <- scores_allcomp %>% 
   dplyr::select(-perc_na_or_missing_ref, -perc_na_or_missing_inp) %>% 
   pivot_wider(names_from=comp_short, values_from = score, names_prefix = 'score_') %>% 
@@ -37,3 +37,4 @@ scores_allcomp_wide <- scores_allcomp %>%
                 ms_dyn_R1 = factor(ms_dyn_R1, levels=c('mm','nm','cm', 'mn','nn','cn','mc','nc','cc')),
                 ms_dyn_R2 = factor(ms_dyn_R2, levels=c('mm','nm','cm', 'mn','nn','cn','mc','nc','cc'))) %>% 
   dplyr::mutate(state_repr = if_else(state_score_cocaine_14dR1_vs_saline_wt==state_score_cocaine_14dR2_vs_saline_wt, TRUE, FALSE))
+
