@@ -6,13 +6,15 @@ _a statistical framework to detect chromatin melting and condensation genome wid
 
 <img src="./data/MELTRONIC_schematic.png" width="900">
 
-### Required packages
+### System requirements
+Developed and tested with R version 3.6.0 Planting of a Tree. 
 ```r
 library(data.table)
 library(dplyr)
 library(argparser)
 library(stringr)
 ```
+Software was developed and tested using data.table package version 1.12.0, dplyr package version 0.7.8, argparser package version 0.7.1 and stringr package version 1.4.1.
 
 ### Available command line applications:
 - matrix_wide_to_long.R:   
@@ -37,6 +39,5 @@ for explanations
   Please refer to the [Snakemake website](https://snakemake.readthedocs.io/en/stable/) for installation and basic usage explanations.
   Please adjust file paths etc before executing the snakefiles. 
    
-Developed and tested with R version 3.6.0 Planting of a Tree.  
 Developed and maintained by Dominik Szabó [<img src="https://cloud.githubusercontent.com/assets/1810515/4228292/6b03dc88-3958-11e4-9094-d3c1771ccfea.png" width="15">](https://orcid.org/0000-0001-8109-5088).  
 Please get in touch for questions and issues: dominik.szabo at mdc-berlin.de  
