@@ -8,7 +8,7 @@ _a statistical framework to detect chromatin melting and condensation genome wid
 
 ### System requirements
 Developed and tested with R version 3.6.0 Planting of a Tree.   
-Please refer to the [R project website](https://cran.r-project.org/doc/manuals/r-release/R-admin.html) for installation and basic usage examples. Typical installtiion time on a desktop computer is ~15 minutes.
+Please refer to the [R project website](https://cran.r-project.org/doc/manuals/r-release/R-admin.html) for installation and basic usage examples. Typical installation time on a desktop computer is ~15 minutes.
 ```r
 library(data.table)
 library(dplyr)
