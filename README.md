@@ -8,6 +8,7 @@ _a statistical framework to detect chromatin melting and condensation genome wid
 
 ### System requirements
 Developed and tested with R version 3.6.0 Planting of a Tree. 
+Please refer to the [R project website](https://cran.r-project.org/doc/manuals/r-release/R-admin.html) for installation and basic usage examples 
 ```r
 library(data.table)
 library(dplyr)
@@ -15,6 +16,7 @@ library(argparser)
 library(stringr)
 ```
 Software was developed and tested using data.table package version 1.12.0, dplyr package version 0.7.8, argparser package version 0.7.1 and stringr package version 1.4.1.
+No non-standard hardware is required for execution of the scripts.
 
 ### Available command line applications:
 - matrix_wide_to_long.R:   
