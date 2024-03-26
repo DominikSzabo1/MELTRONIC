@@ -8,7 +8,7 @@ _a statistical framework to detect chromatin melting and condensation genome wid
 
 ### System requirements
 Developed and tested with R version 3.6.0 Planting of a Tree. 
-Please refer to the [R project website](https://cran.r-project.org/doc/manuals/r-release/R-admin.html) for installation and basic usage examples 
+Please refer to the [R project website](https://cran.r-project.org/doc/manuals/r-release/R-admin.html) for installation and basic usage examples. Typical installtiion time on a desktop computer is ~15 minutes.
 ```r
 library(data.table)
 library(dplyr)
@@ -20,11 +20,14 @@ No non-standard hardware is required for execution of the scripts.
 
 ### Available command line applications:
 - matrix_wide_to_long.R:   
-    Converts a square matrix into a long matrix for IS calculation. Accepts wildcards for processing of multiple chromosomes.
+    Converts a square matrix into a long matrix for IS calculation. Accepts wildcards for processing of multiple chromosomes. 
 - long_matrix_to_IS.R:   
     Calculates insulation scores at multiple distances (default 100kb - 1Mb, steps of 100kb).
 - MELTRONIC.R:   
    Compares insulation score (IS) distributions over regions of interest. Was applied to 120 kb sliding windows accross the entire genome and and long genes for the preparation of the manuscript.    
+
+Expected output files can be found in the /data folder.
+Matrix conversion, IS calculation and MELTRONIC score calculation for the entire mouse genome takes about two hours on a standard desktop computer. 
     
 type
 ```bash
