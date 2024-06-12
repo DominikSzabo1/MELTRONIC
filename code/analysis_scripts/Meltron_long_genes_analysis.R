@@ -46,7 +46,7 @@ deg_cpm <- read_xlsx('../../data/Table_S3_RNA_cpm_deg.xlsx', sheet = 2)
 scores_allcomp_wide_repr <- left_join(scores_allcomp_wide, deg_cpm %>% dplyr::select(-chrom)) %>% 
   dplyr::filter(state_repr==TRUE)
 
-#Fig 3A
+#Fig 3a
 library(ggrepel)
 theme_set(theme_classic())
 
@@ -67,7 +67,7 @@ scores_allcomp_wide_toshow %>%
   theme(axis.title = element_blank(), legend.position = 'none')
 
 
-#Fig 3B
+#Fig 3b
 scores_allcomp_wide_repr %>% 
   ggplot()+
   geom_point(aes(x=score_cocaine_1d_vs_saline_wt, y=CPM_sal_d01, color=state_score_cocaine_1d_vs_saline_wt))+
@@ -94,7 +94,7 @@ wilcox.test((scores_allcomp_wide_repr %>% dplyr::filter(state_score_cocaine_1d_v
 wilcox.test((scores_allcomp_wide_repr %>% dplyr::filter(state_score_cocaine_1d_vs_saline_wt=='n'))$CPM_sal_d01,
             (scores_allcomp_wide_repr %>% dplyr::filter(state_score_cocaine_1d_vs_saline_wt=='m'))$CPM_sal_d01)
 
-#fig S18A
+#ED Fig 6a
 scores_allcomp_wide_repr %>% 
   ggplot()+
   geom_point(aes(x=score_cocaine_14dR1_vs_saline_wt, y=CPM_sal_d14, color=state_score_cocaine_14dR1_vs_saline_wt))+
@@ -117,11 +117,11 @@ scores_allcomp_wide_repr %>%
   scale_fill_manual(values=c('n'='grey70', 'm'='#4256DE', 'c' = '#FF6699'))
 
 wilcox.test((scores_allcomp_wide_repr %>% dplyr::filter(state_score_cocaine_14dR1_vs_saline_wt=='n'))$CPM_sal_d14,
-            (scores_allcomp_wide_repr %>% dplyr::filter(state_score_cocaine_14dR1_vs_saline_wt=='c'))$CPM_sal_d14)
+            (scores_allcomp_wide_repr %>% dplyr::filter(state_score_cocaine_14dR1_vs_saline_wt=='c'))$CPM_sal_d14, alternative = 'less')
 wilcox.test((scores_allcomp_wide_repr %>% dplyr::filter(state_score_cocaine_14dR1_vs_saline_wt=='n'))$CPM_sal_d14,
-            (scores_allcomp_wide_repr %>% dplyr::filter(state_score_cocaine_14dR1_vs_saline_wt=='m'))$CPM_sal_d14)
+            (scores_allcomp_wide_repr %>% dplyr::filter(state_score_cocaine_14dR1_vs_saline_wt=='m'))$CPM_sal_d14, alternative = 'less')
 
-#fig S18B
+#ED Fig 6b
 scores_allcomp_wide_repr %>% group_by(state_score_cocaine_1d_vs_saline_wt) %>% summarise(median(logFC_d01))
 scores_allcomp_wide_repr %>% 
   ggplot()+
@@ -132,7 +132,7 @@ scores_allcomp_wide_repr %>%
   scale_fill_manual(values=c('n'='grey70', 'm'='#4256DE', 'c' = '#FF6699'))+
   theme(legend.position = 'none')
 
-#fig S18C
+#ED Fig 6c
 scores_allcomp_wide_repr %>% group_by(state_score_cocaine_14dR1_vs_saline_wt) %>% summarise(median(logFC_d14))
 scores_allcomp_wide_repr %>% 
   ggplot()+
@@ -142,3 +142,4 @@ scores_allcomp_wide_repr %>%
   geom_jitter(aes(y=state_score_cocaine_14dR1_vs_saline_wt, x=logFC_d14), alpha=0.2, size=0.2)+
   scale_fill_manual(values=c('n'='grey70', 'm'='#4256DE', 'c' = '#FF6699'))+
   theme(legend.position = 'none')
+
